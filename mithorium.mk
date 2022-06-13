@@ -484,3 +484,13 @@ $(call inherit-product-if-exists, vendor/xiaomi/ringtones/ringtones-vendor.mk)
 # Inherit private extras
 USE_EXTRAS := true
 $(call inherit-product-if-exists, vendor/extras/product.mk)
+
+# ROM - Cherish
+ifeq ($(ROM),cherish)
+DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay-cherish
+
+USE_PIXEL_CHARGER := true
+
+TARGET_SUPPORTS_GOOGLE_RECORDER := true
+endif 
+ 
